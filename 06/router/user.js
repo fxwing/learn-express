@@ -2,7 +2,7 @@
  * @Description:user  的路由
  * @Author:
  * @Date: 2021-06-28 10:52:30
- * @LastEditTime: 2021-07-01 18:09:39
+ * @LastEditTime: 2021-07-08 10:58:43
  * @LastEditors: 冯雄伟
  * @Usage:
  */
@@ -10,6 +10,7 @@
 const express = require("express");
 const userCtrl = require("../controller/user");
 const userValidator = require('../validate/user.js')
+const auth = require('../middleware/auth')
 
 const router = express.Router();
 // 登录
@@ -21,7 +22,7 @@ router.post(
   userCtrl.register
 );
 // 获取用户
-router.get("/user", userCtrl.getCurrentUser);
+router.get("/user",auth, userCtrl.getCurrentUser);
 //更新用户
 router.put("/user", userCtrl.updateCurrentUser);
 module.exports = router;

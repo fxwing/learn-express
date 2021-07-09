@@ -2,7 +2,7 @@
  * @Description:验证jsonwebtoken
  * @Author:
  * @Date: 2021-07-06 10:21:39
- * @LastEditTime: 2021-07-06 10:59:48
+ * @LastEditTime: 2021-07-08 10:46:38
  * @LastEditors: 冯雄伟
  * @Usage:
  */
@@ -23,12 +23,12 @@ module.exports = {
 //   }
 // });
 // 验证token
-// token.verify(
+// jwt.verify(
 //   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibGlsaSIsImlhdCI6MTYyNTUzODIzMH0.rfgpDYS8XY85zeCR6ndj6Li9vvz8V_AdlZcWrxsGQ2U",
 //   "ddsffds",
 //   (err, res) => {
 //     if (!err) {
-//       console.log(res);
+//       console.log(res); // { name: 'lili', iat: 1625538230 }
 //     }
 //   }
 // );

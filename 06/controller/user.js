@@ -2,7 +2,7 @@
  * @Description:
  * @Author:
  * @Date: 2021-06-28 11:23:29
- * @LastEditTime: 2021-07-06 11:08:28
+ * @LastEditTime: 2021-07-08 11:53:48
  * @LastEditors: 冯雄伟
  * @Usage:
  */
@@ -19,7 +19,10 @@ exports.login = async (req, res, next) => {
       {
         id: user._id,
       },
-      jwtSecret
+      jwtSecret,
+      {
+        expiresIn: '2 day', // 设置过期时间   验证的时候  verify  内部实现的自动判断的这个过期时间
+      }
     );
     delete user.password;
     res.status(200).json({ ...user, token });
